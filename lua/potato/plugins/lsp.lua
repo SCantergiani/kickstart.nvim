@@ -13,6 +13,7 @@ return {
       },
     },
   },
+
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
@@ -221,6 +222,16 @@ return {
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
+
+        ruff = {
+          settings = {
+            init_options = {
+              settings = {
+                lineLength = 180,
+              },
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = { ... },

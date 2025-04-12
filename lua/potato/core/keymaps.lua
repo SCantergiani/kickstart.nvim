@@ -3,6 +3,24 @@
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+-- For conciseness
+local opts = { noremap = true, silent = true }
+
+-- Disable the spacebar key's default behavior in Normal and Visual modes
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', opts)
+
+-- delete single character without copying into register
+vim.keymap.set('n', 'x', '"_x', opts)
+
+-- Vertical scroll and center
+vim.keymap.set('n', '<C-d>', '<C-d>zz', opts)
+vim.keymap.set('n', '<C-u>', '<C-u>zz', opts)
+
+-- Find and center
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -42,6 +60,3 @@ vim.keymap.set('n', '<C-S-h>', '<C-w>H', { desc = 'Move window to the left' })
 vim.keymap.set('n', '<C-S-l>', '<C-w>L', { desc = 'Move window to the right' })
 vim.keymap.set('n', '<C-S-j>', '<C-w>J', { desc = 'Move window to the lower' })
 vim.keymap.set('n', '<C-S-k>', '<C-w>K', { desc = 'Move window to the upper' })
-
---Custom
-vim.keymap.set('n', 'C-s', '<cmd>w<CR>')
