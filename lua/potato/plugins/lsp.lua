@@ -1,4 +1,4 @@
--- LSP Plugins
+-- LSP Pluginslsp
 
 return {
   {
@@ -224,10 +224,14 @@ return {
         --
 
         ruff = {
-          settings = {
-            init_options = {
-              settings = {
-                lineLength = 180,
+          init_options = {
+            settings = {
+              -- Ruff language server settings go here
+              lineLength = 120,
+              organizeImports = true,
+              showSyntaxErrors = true,
+              lint = {
+                select = { 'ALL' },
               },
             },
           },
