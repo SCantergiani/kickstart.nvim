@@ -60,3 +60,17 @@ vim.keymap.set('n', '<C-S-h>', '<C-w>H', { desc = 'Move window to the left' })
 vim.keymap.set('n', '<C-S-l>', '<C-w>L', { desc = 'Move window to the right' })
 vim.keymap.set('n', '<C-S-j>', '<C-w>J', { desc = 'Move window to the lower' })
 vim.keymap.set('n', '<C-S-k>', '<C-w>K', { desc = 'Move window to the upper' })
+
+-- Iron
+vim.keymap.set('n', '<space>rr', '<cmd>IronRepl<cr>', { desc = 'Toggle REPL', noremap = true, silent = true })
+vim.keymap.set('n', '<space>rl', function()
+  require('iron.core').send_line()
+end, { desc = 'Send line' })
+
+vim.keymap.set('n', '<space>rf', function()
+  require('iron.core').send_file()
+end, { desc = 'Send file' })
+
+vim.keymap.set('n', '<space>rp', function()
+  require('iron.core').send_paragraph()
+end, { desc = 'Send paragraph' })
