@@ -1,14 +1,10 @@
+import math
 from collections import defaultdict
 from pathlib import Path
 
-from bs4 import BeautifulSoup
-from loguru import logger
 import pandas as pd
 import requests
-from tqdm import tqdm
 import typer
-
-import math
 from aurys_scraper.config import DF_PATH, N_PAGES, SHORT_URL, TAG_MAP, TIMEOUT
 from aurys_scraper.utils.funcs import (
     desc_df,
@@ -17,6 +13,9 @@ from aurys_scraper.utils.funcs import (
     url_shortener,
 )
 from aurys_scraper.utils.user_agents import get_ua
+from bs4 import BeautifulSoup
+from loguru import logger
+from tqdm import tqdm
 
 app = typer.Typer()
 
@@ -94,6 +93,11 @@ def main(
     logger.info("Guardando datos en archivo CSV...")
     df_noticias.to_csv(output_path, index=False, encoding="utf-8")
 
-
-if __name__ == "__main__":
-    app()
+    test = {
+        "one": {
+            "two": {
+                "tree": "hola",
+                "four": "chao",
+            },
+        },
+    }
