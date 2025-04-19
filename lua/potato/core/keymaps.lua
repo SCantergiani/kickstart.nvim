@@ -1,4 +1,5 @@
 local set = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
 -- Disable the spacebar key's default behavior in Normal and Visual modes
 set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
@@ -74,4 +75,23 @@ set('n', '<space>rc', function()
 end, { desc = 'Clear terminal' })
 
 -- Terminal
-set('n', '<space>tt', '<cmd>ToggleTerm<cr>', { desc = 'Toggle terminal', noremap = true, silent = true })
+set('n', '<space>tt', '<cmd>ToggleTerm<cr>', opts)
+
+-- Neo-Tree
+set('n', '|', ':Neotree toggle <CR>', opts)
+
+-- Move lines
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+
+-- Press jk fast to exit insert mode
+vim.keymap.set('i', 'jk', '<ESC>', opts)
+vim.keymap.set('i', 'kj', '<ESC>', opts)
+
+-- Stay in indent mode
+vim.keymap.set('v', '<', '<gv', opts)
+vim.keymap.set('v', '>', '>gv', opts)
+
+-- Find and center
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
