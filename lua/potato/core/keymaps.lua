@@ -30,7 +30,7 @@ set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]ui
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
---
+
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
@@ -57,22 +57,34 @@ set('n', '<C-S-j>', '<C-w>J', { desc = 'Move window to the lower' })
 set('n', '<C-S-k>', '<C-w>K', { desc = 'Move window to the upper' })
 
 -- Iron
-set('n', '<space>rr', '<cmd>IronRepl<cr>', { desc = 'Toggle REPL', noremap = true, silent = true })
-set('n', '<space>rl', function()
+set('n', '<space>pr', '<cmd>IronRepl<cr>', { desc = 'Toggle REPL', noremap = true, silent = true })
+set('n', '<space>pl', function()
   require('iron.core').send_line()
 end, { desc = 'Send line' })
 
-set('n', '<space>rf', function()
+set('n', '<space>pf', function()
   require('iron.core').send_file()
 end, { desc = 'Send file' })
 
-set('n', '<space>rp', function()
+set('n', '<space>pp', function()
   require('iron.core').send_paragraph()
 end, { desc = 'Send paragraph' })
 
-set('n', '<space>rc', function()
+set('n', '<space>pc', function()
   require('iron.core').repl_restart()
 end, { desc = 'Clear terminal' })
+
+set('n', '<space>pu', function()
+  require('iron.core').send_until_cursor()
+end, { desc = 'Send until cursor' })
+
+set('v', '<space>pv', function()
+  require('iron.core').visual_send()
+end, { desc = 'Send visual lines' })
+
+set('n', 'gp', function()
+  require('iron.core').send_file()
+end, { desc = 'Send file Python', noremap = true, silent = true })
 
 -- Terminal
 set('n', '<space>tt', '<cmd>ToggleTerm<cr>', opts)
