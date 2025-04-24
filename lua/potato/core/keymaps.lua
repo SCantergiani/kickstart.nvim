@@ -51,10 +51,10 @@ set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
-set('n', '<C-S-h>', '<C-w>H', { desc = 'Move window to the left' })
-set('n', '<C-S-l>', '<C-w>L', { desc = 'Move window to the right' })
-set('n', '<C-S-j>', '<C-w>J', { desc = 'Move window to the lower' })
-set('n', '<C-S-k>', '<C-w>K', { desc = 'Move window to the upper' })
+-- set('n', '<C-S-h>', '<C-w>H', { desc = 'Move window to the left' })
+-- set('n', '<C-S-l>', '<C-w>L', { desc = 'Move window to the right' })
+-- set('n', '<C-S-j>', '<C-w>J', { desc = 'Move window to the lower' })
+-- set('n', '<C-S-k>', '<C-w>K', { desc = 'Move window to the upper' })
 
 -- Iron
 set('n', '<space>pr', '<cmd>IronRepl<cr>', { desc = 'Toggle REPL', noremap = true, silent = true })
@@ -107,3 +107,6 @@ vim.keymap.set('v', '>', '>gv', opts)
 -- Find and center
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
+
+-- Rename variable
+vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { desc = '[R]eplace var', noremap = true, silent = true })

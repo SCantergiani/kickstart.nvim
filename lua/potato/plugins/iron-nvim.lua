@@ -15,7 +15,7 @@ return {
           -- Your repl definitions come here
           repl_definition = {
             python = {
-              command = { 'ipython' }, -- or { "ipython", "--no-autoindent" }
+              command = { 'ipython', '--no-autoindent' }, -- or { "ipython", "--no-autoindent" }
               format = common.bracketed_paste_python,
               block_dividers = { '# %%', '#%%' },
             },

@@ -1,3 +1,6 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 require 'potato.core.keymaps'
 require 'potato.core.set'
 
