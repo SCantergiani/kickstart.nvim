@@ -12,6 +12,10 @@ return {
   cmd = 'Neotree',
   opts = {
     filesystem = {
+      filters = {
+        hide_dotfiles = false,
+        hide_gitignored = false,
+      },
       window = {
         position = 'right',
         mappings = {

@@ -36,12 +36,11 @@ return {
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
-  {
+  -- Highlight todo, notes, etc in comments
+  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-    -- Highlight todo, notes, etc in comments
-    { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
-  },
-  {
-    'tpope/vim-sleuth',
-  },
+  { 'tpope/vim-sleuth', version = '*' },
+  { 'LudoPinelli/comment-box.nvim', verison = '*' },
+  { 'kkoomen/vim-doge', version = '*' },
+  -- { 'windwp/nvim-autopairs', event = 'InsertEnter', opts = {} },
 }

@@ -108,5 +108,6 @@ vim.keymap.set('v', '>', '>gv', opts)
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
--- Rename variable
-vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { desc = '[R]eplace var', noremap = true, silent = true })
+-- Comment box
+set({ 'n', 'v' }, '<leader>ic', '<Cmd>CBlcbox10<CR>', { desc = 'Comment box', noremap = true, silent = true })
+set({ 'n', 'v' }, '<leader>id', '<Cmd>DogeGenerate sphinx<CR>', { desc = 'Comment box', noremap = true, silent = true })
