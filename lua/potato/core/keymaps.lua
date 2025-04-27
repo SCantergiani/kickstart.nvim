@@ -89,12 +89,8 @@ end, { desc = 'Send file Python', noremap = true, silent = true })
 -- Terminal
 set('n', '<space>tt', '<cmd>ToggleTerm<cr>', opts)
 
--- Neo-Tree
-set('n', '|', ':Neotree toggle <CR>', opts)
-
--- Move lines
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+-- Oil
+set('n', '|', '<CMD>Oil<CR>', opts)
 
 -- Press jk fast to exit insert mode
 vim.keymap.set('i', 'jk', '<ESC>', opts)
