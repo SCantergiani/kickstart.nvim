@@ -110,4 +110,4 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- Comment box
 set({ 'n', 'v' }, '<leader>ic', '<Cmd>CBlcbox10<CR>', { desc = 'Comment box', noremap = true, silent = true })
-set({ 'n', 'v' }, '<leader>id', '<Cmd>DogeGenerate sphinx<CR>', { desc = 'Comment box', noremap = true, silent = true })
+set({ 'n', 'v' }, '<leader>id', '<Cmd>DogeGenerate sphinx<CR>', { desc = 'Docstring', noremap = true, silent = true })
