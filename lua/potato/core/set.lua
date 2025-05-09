@@ -1,3 +1,4 @@
+vim.g.python3_host_prog = vim.env.HOME .. '/.venvs/neovim/bin/python3'
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 

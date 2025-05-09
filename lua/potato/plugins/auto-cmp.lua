@@ -95,7 +95,11 @@ return {
       -- the rust implementation via `'prefer_rust_with_warning'`
       --
       -- See :h blink-cmp-config-fuzzy for more information
+<<<<<<< HEAD
       fuzzy = { implementation = 'prefer_rust' },
+=======
+      fuzzy = { implementation = 'rust' },
+>>>>>>> 2352075 (plugin update)
 
       -- Shows a signature help window while you type arguments for a function
       signature = { enabled = true },
